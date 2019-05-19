@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+{% endblock %}
+
+{% block home %}
+    <div class="bgimg" id="home">
+
+      <nav class="navbar navbar-expand-md bg-dark navbar-drark fixed-top">
+        <div class="container">
+          {% for h in home %}
+          <a href="#home" class="navbar-brand text-warning font-weight-bold">{{ h.brand_name }}</a>
+          {% endfor %}
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsenavbar">
+            <img src="{% static 'home/img/icons8-menu-24.png' %}" alt="">
+          </button>
+
+          <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="#home" class="nav-link text-white active" data-scroll>Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#about" class="nav-link text-white" data-scroll>About</a>
+              </li>
+              <li class="nav-item">
+                <a href="#services" class="nav-link text-white" data-scroll>Services</a>
+              </li>
+              <li class="nav-item">
+                <a href="#portfolio" class="nav-link text-white" data-scroll>Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a href="#feedback" class="nav-link text-white" data-scroll>Feedback</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="nav-link text-white" data-scroll>Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div><!-- home container end -->
+      </nav><!-- home nav end -->
+
+      <div class="container text-center text-white headerset">
+        {% for h in home %}
+        <h2 class="text-capitalize">{{ h.up_heading }}</h2>
+        <h1 class="text-uppercase">{{ h.down_heading }}</h1>
+        <a href="#about"><button type="button" class="btn btn-warning text-white btn-lg text-capitalize">{{ h.button_text }}</button></a>
+        {% endfor %}
+      </div>
+
+    </div><!-- home div end -->
+
+
+    <!--about me section start -->
+    <section class="about" id="about">
+      <div class="container">
+        {% for t in title %}
+        <h1 class="text-center text-capitalize">{{ t.about_title }}</h1>
+        <p class="text-center">{{ t.about_sub_title }}</p>
+        {% endfor %}
+        <div class="row aboutsetting">
+
+          {% for a in about %}
+          <div class="about-me col-lg-6 col-md-6 col-sm-10 col-12 d-block m-auto text-justify">
+            <h3>Hello,</h3>
+            <p>{{ a.about }}</p>
+            <a href="{{ a.cv.url }}"><button type="button" class="btn btn-warning text-white"> <i class="fa fa-download"></i> Download CV</button></a>
+          {% endfor %}
+            <a href="#contact"><button type="button" class="btn btn-outline-warning hire">Hire Me</button></a>
+          </div>
+
+          <div class="col-lg-2 col-md-1"></div>
+
+          <div class="col-lg-4 col-md-5 col-sm-10 col-12 d-block m-auto text-center">
+            <h3>Skills</h3>
+            {% for s in skill %}
+            <button type="button" class="btn btn-light" disabled>{{ s.skills }}</button>
+            {% endfor %}
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!--services section start-->
+    <section id="services" class="services text-white" >
+      <div class="container text-center">
+
+        {% for t in title %}
+        <h1 class="text-uppercase">{{ t.service_title }}</h1>
+        <p>{{ t.service_sub_title }}</p>
+        {% endfor %}
+
+        <div class="row rowsetting">
+
+          <!--single services start-->
+          {% for s in service %}
+          <div class="col-lg-4 col-md-4 col-sm-4 col-10 d-block m-auto wow slideInLeft">
+            <div class="imgsetting d-block m-auto bg-warning">
+              <img src="{{ s.s_icon.url }}" style="margin-top: 20px">
+            </div>
+
+            <h2 class="text-capitalize">{{ s.s_title }}</h2>
+            <p>{{ s.s_details }}</p>
+          </div>
+          {% endfor %}
+
+        </div><!-- services row rowsetting end -->
+
+      </div>
+    </section> <!-- services section end -->
+
+
+    <!--portfolio section start-->
+    <section id="portfolio" class="portfolio">
+
+      <div class="container text-center">
+
+        {% for t in title %}
+        <h1 class="text-uppercase">{{ t.portfolio_title }}</h1>
+        <p>{{ t.portfolio_sub_title }}</p>
+        {% endfor %}
+
+        <div class="row">
+          {% for p in project %}
+          <!--single portfolio start -->
+          <div class="col-lg-4 col-md-4 col-sm-10 col-10 d-block m-auto">
+            <div class="card">
+              <div class="box">
+                <img src="{{ p.thumb_1.url }}" class="card-img img-fluid" alt="">
+                <div class="box-content">
+                    <h3 class="title">Live Demo</h3>
+                    <ul class="icon">
+                        <li><a href="{{ p.live_url }}"><i class="fa fa-link"></i></a></li>
+                    </ul>
+                </div>
+              </div>
+              <div class="card-body">
+                <a href="{% url 'home:project' slug=p.slug %}"><h2 class="card-title text-dark">{{ p.project_name }}</h2></a>
+                <p class="card-text">{{ p.category }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <a href="{% url 'home:portfolio' %}"><button type="button" class="btn btn-warning text-white btn-lg">See More</button></a>
+
+      </div><!--end of portfolio container-->
+
+    </section><!--end of portfolio section-->
+
+    <!-- fun-fact section start
+    <section class="fun-fact">
+      <div class="container text-center text-white">
+
+        <div class="row">
+          <div class="single-fun col-lg-3 col-md-3 col-sm-10 col-10 d-block m-auto">
+            <i class="fa fa-check-square-o fa-3x" aria-hidden="true"></i>
+            <span>758</span>
+            <h4 class="text-uppercase">project completed</h4>
+          </div>
+
+          <div class="single-fun col-lg-3 col-md-3 col-sm-10 col-10 d-block m-auto">
+            <i class="fa fa-smile-o fa-3x" aria-hidden="true"></i>
+            <span>758</span>
+            <h4 class="text-uppercase">project completed</h4>
+          </div>
+
+          <div class="single-fun col-lg-3 col-md-3 col-sm-10 col-10 d-block m-auto">
+            <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+            <span>758</span>
+            <h4 class="text-uppercase">project completed</h4>
+          </div>
+
+          <div class="single-fun col-lg-3 col-md-3 col-sm-10 col-10 d-block m-auto">
+            <i class="fa fa-envelope-o fa-3x" aria-hidden="true"></i>
+            <span>758</span>
+            <h4 class="text-uppercase">project completed</h4>
+          </div>
+        </div>
+
+      </div>
+    </section> fun-fact section end-->
+
+    <section id="feedback" class="clients">
+      <div class="container text-center">
+
+        {% for t in title %}
+        <h1 class="text-uppercase">{{ t.feedback_title }}</h1>
+        <p>{{ t.feedback_sub_title }}</p>
+        {% endfor %}
+
+        <div class="row clientssetting">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                  {% for f in feedback %}
+                  <div {% if forloop.first %} class="carousel-item active" {% else %} class="carousel-item" {% endif %}>
+                    <img class="img-fluid rounded-circle" height="100px" width="100px" src="{{ f.photo.url }}" alt="First slide">
+                    <h4>{{ f.name }}, <span>{{ f.profession }}</span> </h4>
+                    <p>{{ f.comment }}</p>
+                  </div>
+                  {% endfor %}
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <i class="text-dark fa fa-arrow-left fa-2x" style="font-size: 22px" aria-hidden="true"> </i>
+                  <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <i class="text-dark fa fa-arrow-right" style="font-size: 22px" aria-hidden="true"> </i>
+                  <span class="sr-only">Next</span>
+                </a>
+
+              </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!--follow me section  start -->
+    <section class="follow-me bg-dark text-white">
+      <div class="container text-center">
+
+        <div class="row follow-me-set">
+          <div class="single-follow col-lg-3 col-md-3 col-sm-3 d-block m-auto">
+            <i class="fa fa-facebook fa-2x"></i>
+            {% for f in follow %}
+            <a href="{{ f.facebook_url }}"><h4 class="text-white">{{ f.facebook_id }}</h4></a>
+            {% endfor %}
+          </div>
+
+          <div class="single-follow col-lg-3 col-md-3 col-sm-3 d-block m-auto">
+            <i class="fa fa-twitter fa-2x"></i>
+            {% for f in follow %}
+            <a href="{{ f.twitter_url }}"><h4 class="text-white">{{ f.twitter_id }}</h4></a>
+            {% endfor %}
+          </div>
+
+          <div class="single-follow col-lg-3 col-md-3 col-sm-3 d-block m-auto">
+            <i class="fa fa-linkedin fa-2x"></i>
+            {% for f in follow %}
+            <a href="{{ f.linkedin_url }}"><h4 class="text-white">{{ f.linkedin_id }}</h4></a>
+            {% endfor %}
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-sm-3  d-block m-auto">
+            <i class="fa fa-google-plus fa-2x"></i>
+            {% for f in follow %}
+            <a href="{{ f.google_plus_url }}"><h4 class="text-white">{{ f.google_plus_id }}</h4></a>
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- contact section start-->
+    <section id="contact" class="contact">
+      <div class="container text-center">
+
+        {% for t in title %}
+        <h1 class="text-uppercase">{{ t.contact_title }}</h1>
+        <p>{{ t.contact_sub_title }}</p>
+        {% endfor %}
+
+        <div class="row contactsetting">
+          <form class="form" action="" method="POST">
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="form-group col-md-4 col-sm-12 col-12 d-block m-auto">
+                <input type="text" name="name" class="form-control" placeholder="Name" maxlength="50" required id="id_name">
+              </div>
+              <div class="form-group col-md-4 col-sm-12 col-12 d-block m-auto">
+                <input type="email" name="email" class="form-control" placeholder="Email" maxlength="50" required id="id_email">
+              </div>
+              <div class="form-group col-md-4 col-sm-12 col-12 d-block m-auto">
+                <input type="text" name="subject" class="form-control" placeholder="Subject" maxlength="50" required id="id_subject">
+              </div>
+              <div class="form-group col-md-12 col-sm-12 col-12 d-block m-auto">
+                <textarea rows="8" cols="80" name="message" class="form-control" maxlength="50" required id="id_message">Message</textarea>
+              </div>
+            </div>
+            <input type="submit" class="btn btn-warning text-white btn-lg" value="Send">
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+
+{% endblock %}

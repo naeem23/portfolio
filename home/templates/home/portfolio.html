@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'home/css/project.css' %}">
+{% endblock %}
+
+{% block portfolio %}
+  <header class="portfolio-banner" id="home">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <div class="container">
+        <a href="{% url 'home:home' %}" class="navbar-brand text-warning font-weight-bold">Nae'3m</a>
+
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsenavbar">
+          <img src="{% static 'home/img/icons8-menu-24.png' %}" alt="">
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="{% url 'home:home' %}" class="nav-link text-white">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'home:home' %}" class="nav-link text-white">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'home:home' %}" class="nav-link text-white">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'home:portfolio' %}" class="nav-link text-white active">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'home:home' %}" class="nav-link text-white">Feedback</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'home:home' %}" class="nav-link text-white">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container text-left text-white portfolioset">
+      {% for t in title %}
+      <h2 class="text-capitalize">{{ t.portfolio_title }}</h2>
+      <span>{{ t.portfolio_sub_title }}</span>
+      {% endfor %}
+    </div>
+  </header>
+
+  <!--portfolio section start-->
+  <section id="portfolio" class="portfolio">
+
+    <div class="container text-center">
+
+      <h1 class="text-uppercase">Portfolio</h1>
+      <p>Expertise with world class work quality</p>
+
+      <div class="row">
+        {% for p in project %}
+        <!--single portfolio start -->
+        <div class="col-lg-4 col-md-4 col-sm-10 col-10 d-block m-auto">
+          <div class="card">
+            <div class="box">
+              <img src="{{ p.thumb_1.url }}" class="card-img img-fluid" alt="">
+              <div class="box-content">
+                  <h3 class="title">Live Demo</h3>
+                  <ul class="icon">
+                      <li><a href="{{ p.live_url }}"><i class="fa fa-link"></i></a></li>
+                  </ul>
+              </div>
+            </div>
+            <div class="card-body">
+              <a href="{% url 'home:project' slug=p.slug %}"><h2 class="card-title text-dark">{{ p.project_name }}</h2></a>
+              <p class="card-text">{{ p.category }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div><!--end of portfolio container-->
+
+  </section><!--end of portfolio section-->
+{% endblock %}

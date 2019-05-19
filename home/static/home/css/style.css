@@ -1,0 +1,542 @@
+.bgimg{
+  background-image: url('../img/bg-7.jpg');
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  width: 100%;
+  height: 650px;
+}
+
+nav{
+  padding: 1rem !important;
+}
+
+.navbar-brand{
+  font-size: 2rem !important;
+}
+
+nav ul li{
+  margin-right: 10px;
+}
+
+
+nav ul li a{
+  font-weight: bold !important;
+}
+
+nav ul li:hover a{
+  color: #f0ad4e !important;
+}
+
+nav ul li .active{
+  color: #f0ad4e !important;
+}
+
+.headerset{
+  padding-top: 250px;
+  box-sizing: border-box;
+}
+
+.headerset h2{
+  font-size: 42px;
+}
+
+.headerset h1{
+  font-size: 82px;
+  font-weight: bold;
+}
+
+.headerset button{
+  padding: 0.5rem 3rem;
+}
+
+
+/*.........about me..........*/
+.about{
+  padding: 100px 0 100px;
+}
+
+.about h1{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.aboutsetting{
+  margin-top: 80px;
+}
+
+.btn-outline-warning:hover{
+  color: #fff !important;
+}
+
+.about .hire{
+  margin-left: 20px;
+}
+
+.about .btn-light:disabled{
+  background-color: #eaebec !important;
+  margin: 0 3px 5px 0;
+}
+
+
+/*...............our service...........*/
+.services{
+  padding: 100px 0 5px;
+  background-image: url('../img/bg-2.jpeg');
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+.services h1{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.rowsetting{
+  margin: 80px 0px !important;
+}
+
+.imgsetting{
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.fa-shopping-cart,
+.fa-laptop,
+.fa-cogs{
+  margin-top: 20px;
+}
+
+.rowsetting h2{
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.rowsetting p{
+  padding: 10px;
+  color: #fff;
+}
+
+
+/*............portfolio section......*/
+.portfolio{
+  width: 100%;
+  padding: 100px 0 100px;
+}
+
+.portfolio h1{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.card{
+  margin-top: 40px;
+}
+
+.portfolio button{
+  margin-top: 50px;
+  padding: 0.5rem 3rem;
+}
+
+.card-img{
+  border-radius: 0px !important;
+}
+
+.card a:hover{
+  text-decoration: none;
+}
+
+.card a:hover h2{
+  color: #FFC107 !important;
+}
+
+.box{
+    background: #000;
+    text-align: center;
+    position: relative;
+}
+.box:hover img{ opacity: 0.5; }
+.box .box-content{
+    padding: 30px 10px 30px 0;
+    background: rgba(0, 0, 0, 0.65);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.35s ease 0s;
+}
+.box:hover .box-content{
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    opacity: 1;
+}
+.box .title{
+    width: 100%;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 17px;
+    margin: 5px 0;
+    position: absolute;
+    bottom: 55%;
+}
+.box .icon{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+}
+.box .icon li{
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.35s ease 0s;
+}
+.box:hover .icon li{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.box:hover .icon li{ transition-delay: 0.1s; }
+.box .icon li a{
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #f39c12;
+    font-size: 20px;
+    color: #000;
+    line-height: 35px;
+    margin-right: 5px;
+    transition: all 0.35s ease 0s;
+}
+.box .icon a:hover{ background: #fff; }
+
+/* .........fun fact section........*/
+.fun-fact{
+  padding: 90px 0 60px;
+  background-image: url('../img/bg-3.jpg');
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+.fun-fact span{
+  font-size: 36px;
+  font-weight: bold;
+  margin-left: 16px;
+}
+.fun-fact h4{
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+
+
+
+/*............ourteam section
+.ourteam{
+  width: 100%;
+  padding: 100px 0 60px;
+}
+
+.ourteam h1{
+  font-size: 50px;
+  font-weight: bold;
+}
+.teamsetting{
+  margin-top: 70px;
+}
+......*/
+
+/*.........clients..........*/
+.clients{
+  padding: 20px 0 100px;
+}
+.clients h1{
+  font-size: 50px;
+  font-weight: bold;
+}
+.clientssetting{
+  margin-top: 80px;
+}
+.clientssetting h4{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.clientssetting h4 span{
+  font-size: 16px;
+  font-weight: normal;
+}
+.carousel-indicators{
+  top: 130% !important;
+  bottom: 0 !important;
+}
+.carousel-indicators li{
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50%;
+  background-color: #343a40 !important;
+}
+
+.carousel-indicators .active{
+  background-color: #f0ad4e !important;
+}
+.carousel-inner{
+  width: 70% !important;
+  margin: 0 auto !important;
+}
+
+
+/* ..........follow me section.......*/
+.follow-me{
+  margin-top: 50px;
+  padding: 80px 0 60px;
+  background-image: url('../img/bg-11.jpg');
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  width: 100%;
+}
+
+.follow-me-set a{
+  text-decoration: none;
+}
+
+.follow-me-set a h4{
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.follow-me-set a:hover{
+  text-decoration: none;
+}
+
+.follow-me-set a:hover h4{
+  color: #ffbb33 !important;
+}
+
+
+/*...........contact section.........*/
+.contact{
+  padding: 100px 0 60px;
+}
+.contact h1{
+  font-size: 50px;
+  font-weight: bold;
+}
+.contactsetting{
+  margin-top: 50px;
+}
+.form{
+  width: 70%;
+  margin: 0 auto;
+}
+.form textarea{
+  margin: 20px 0;
+}
+.contact form .btn-lg{
+  padding: 0.5rem 5rem !important;
+}
+
+
+
+/*............footer section......*/
+.back-to-top{
+  position: fixed;
+  display: none;
+  bottom: 85px;
+  right: 15px;
+}
+
+.footer{
+  padding: 10px 0 3px;
+}
+
+.footer h6{
+  line-height: 50px;
+}
+
+
+
+
+
+
+/* ..............responsive........... */
+@media(min-width: 992px){
+  .carousel-indicators{
+    top: 120% !important;
+  }
+}
+
+@media only screen and (max-width:990px){
+    .box{ margin-bottom: 20px; }
+}
+
+@media(min-width: 768px) and (max-width: 991px){
+  .headerset h2{
+    font-size: 32px;
+  }
+
+  .headerset h1{
+    font-size: 62px;
+  }
+
+  .carousel-indicators{
+    top: 110% !important;
+  }
+}
+
+@media(min-width: 575px) and (max-width: 767px){
+  .headerset h2{
+    font-size: 28px;
+  }
+
+  .headerset h1{
+    font-size: 48px;
+  }
+
+  .headerset button{
+    padding: 0.5rem 1rem;
+  }
+
+  .about .about-me{
+    margin-bottom: 40px !important;
+    text-align: center !important;
+  }
+
+  .contact form input{
+    margin-bottom: 10px;
+  }
+
+  .contact form textarea{
+    margin-top: 10px;
+  }
+
+  .fun-fact h4{
+    margin-top: 10px;
+  }
+
+  .fun-fact .single-fun{
+    margin-bottom: 25px !important;
+  }
+
+  .carousel-indicators{
+    top: 110% !important;
+  }
+
+  .follow-me .single-follow{
+    margin-bottom: 20px !important;
+  }
+}
+
+
+@media(min-width: 480px) and (max-width: 574px){
+  .headerset h2{
+    font-size: 26px;
+  }
+
+  .headerset h1{
+    font-size: 40px;
+  }
+
+  .headerset button{
+    padding: 0.5rem 2rem;
+  }
+
+  .about .about-me{
+    margin-bottom: 40px !important;
+    text-align: center !important;
+  }
+
+  .contact button{
+    padding: 0.5rem 2rem;
+  }
+
+  .contact form input{
+    margin-bottom: 10px;
+  }
+
+  .contact form textarea{
+    margin-top: 10px;
+  }
+
+  .fun-fact h4{
+    margin-top: 10px;
+  }
+
+  .fun-fact .single-fun{
+    margin-bottom: 25px !important;
+  }
+
+  .carousel-indicators{
+    top: 110% !important;
+  }
+
+  .follow-me .single-follow{
+    margin-bottom: 20px !important;
+  }
+}
+
+
+@media(max-width: 479px){
+  .headerset h2{
+    font-size: 22px;
+  }
+
+  .headerset h1{
+    font-size: 46px;
+  }
+
+  .about .about-me{
+    margin-bottom: 40px !important;
+    text-align: center !important;
+  }
+
+  .headerset button{
+    padding: 0.5rem 1rem;
+  }
+
+  .contact button{
+    padding: 0.5rem 1rem;
+  }
+
+  .contact form input{
+    margin-bottom: 10px;
+  }
+
+  .contact form textarea{
+    margin-top: 10px;
+  }
+
+  .fun-fact h4{
+    margin-top: 10px;
+  }
+
+  .fun-fact .single-fun{
+    margin-bottom: 25px !important;
+  }
+
+  .carousel-indicators{
+    top: 110% !important;
+  }
+
+  .follow-me .single-follow{
+    margin-bottom: 20px !important;
+  }
+
+  .contact form .btn-lg{
+    padding: 0.5rem 3rem !important;
+  }
+}
