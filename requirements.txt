@@ -19,7 +19,7 @@ future==0.16.0
 idna==2.6
 include==0.2.1
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 Markdown==2.6.11
 markdown2==2.3.5
 MarkupSafe==1.0
