@@ -24,7 +24,7 @@ Markdown==2.6.11
 markdown2==2.3.5
 MarkupSafe==1.0
 mathparse==0.1.1
-nltk==3.3
+nltk==3.6.3
 oauthlib==2.0.6
 Pillow==5.0.0
 PyJWT==1.5.3
